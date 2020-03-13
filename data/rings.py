@@ -20,4 +20,6 @@ class Rings(SqlAlchemyBase):
         return f'{t//60//10}{t//60%10}:{t%60//10}{t%60%10}'
 
     def __str__(self):
-        return f'{self.days[self.dayofweek-1]} {}-{}'
+        return f'{self.days[self.dayofweek-1]} ' \
+               f'{self.time_to_str(self.starttime)}-' \
+               f'{self.time_to_str(self.endtime)}'
